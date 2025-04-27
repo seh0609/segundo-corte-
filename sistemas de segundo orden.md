@@ -3,7 +3,26 @@ Tenemos que los sistemas de segundo orden  son todos aquellos sistemas que tiene
 
 La estructura de un sistema de segundo orden se ve asi:
 
-<a href="http://www.alciro.org/tools/matematicas/editor-ecuaciones.jsp?eq=y''\left( t \right)+a_{1}y'\left( t \right)+a_{0}\left( t \right)= b_{0}u\left( t \right)"><img src="http://www.alciro.org/cgi/tex.cgi?y''\left( t \right)+a_{1}y'\left( t \right)+a_{0}\left( t \right)= b_{0}u\left( t \right)" title="y''\left( t \right)+a_{1}y'\left( t \right)+a_{0}\left( t \right)= b_{0}u\left( t \right)" border="0" /></a>
+$$y''(t)+a_1 y'(t)+a_0 y(t)=b_0u(t)$$
+
+Cuando hayamos la funcion de transferencia tenemos:
+
+aplicamos la transformada de LaPlace
+
+
+$$s²Y(s)+a_1sY(s)+a_0 Y(s)=b_0U(s)$$
+
+Despues de esto despejamos la salida/entrada 
+
+$$\frac{Y(s)}{U(s)}=\frac{b_0}{s²+a_1s+a_0}$$
+
+Despues de esto para obetener la forma canonica\
+Usamos estos terminos\
+$$\left( a_1 = 2ζω_n\right)  \left( a_0 =  ω_{n}^2\right) \left( b_0 = K × ω_{n}^2\right)$$
+>🔑 *Definición:* descripción precisa y clara del significado de una palabra, término, concepto o fenómeno. Es una explicación que establece los límites y el alcance de aquello que se está definiendo, aclarando su naturaleza, características esenciales y, en algunos casos, su relación con otros conceptos.
+
+
+
 
 ### 2.1. Ecuaciones fundamentales 
 
