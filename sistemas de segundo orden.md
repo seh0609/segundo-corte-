@@ -1,5 +1,9 @@
-# Funciones de transferencia
-La función de transferencia sirve para analizar y modelar el comportamiento de un sistema en el dominio de la frecuencia, permitiendo determinar cómo responde a diferentes señales de entrada. Es una herramienta fundamental en el diseño y control de sistemas dinámicos, ya que facilita el estudio de la estabilidad, el rendimiento y la optimización de procesos en aplicaciones como la robótica, la automatización y la electrónica.
+# Sistemas De Segundo Orden
+Tenemos que los sistemas de segundo orden  son todos aquellos sistemas que tienen dos polos y están representados típicamente por ecuaciones diferenciales ordinarias de segundo orden. 
+
+La estructura de un sistema de segundo orden se ve asi:
+
+<a href="http://www.alciro.org/tools/matematicas/editor-ecuaciones.jsp?eq=y''\left( t \right)+a_{1}y'\left( t \right)+a_{0}\left( t \right)= b_{0}u\left( t \right)"><img src="http://www.alciro.org/cgi/tex.cgi?y''\left( t \right)+a_{1}y'\left( t \right)+a_{0}\left( t \right)= b_{0}u\left( t \right)" title="y''\left( t \right)+a_{1}y'\left( t \right)+a_{0}\left( t \right)= b_{0}u\left( t \right)" border="0" /></a>
 
 ### 2.1. Ecuaciones fundamentales 
 
