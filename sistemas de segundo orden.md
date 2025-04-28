@@ -17,14 +17,30 @@ Despues de esto despejamos la salida/entrada
 $$\frac{Y(s)}{U(s)}=\frac{b_0}{s²+a_1s+a_0}$$
 
 Despues de esto para obetener la forma canonica\
-Usamos estos terminos\
+**Usamos estos terminos**\
 $$\left( a_1 = 2ζω_n\right)  \left( a_0 =  ω_{n}^2\right) \left( b_0 = K × ω_{n}^2\right)$$
->🔑 *Definición:* descripción precisa y clara del significado de una palabra, término, concepto o fenómeno. Es una explicación que establece los límites y el alcance de aquello que se está definiendo, aclarando su naturaleza, características esenciales y, en algunos casos, su relación con otros conceptos.
+
+Obtenemos su forma canónica
+
+$$\frac{Y(s)}{U(s)}=\frac{K*ω_{n}^2}{s²+2ζω_ns+ω_{n}^2}$$
+
+
+>🔑 *K:* Ganancia estática\
+>🔑 *ω_n:* Frecuencia natural del sistema\
+>🔑 *ζ:* Factor de amortiguamiento del sistema
+
+### 2.1. Respuesta de un Sistema de Segundo orden para un escalón
+
+Despues de obtener nuestra ecuacion de forma canonica
+
+$$\frac{Y(s)}{U(s)}=\frac{K*ω_{n}^2}{s²+2ζω_ns+ω_{n}^2}$$
+
+Factorizando queda 
+
+$$G(s)=\frac{K*ω_{n}^2}{s²+2ζω_ns+ω_{n}^2}$$
 
 
 
-
-### 2.1. Ecuaciones fundamentales 
 
 ![image](https://github.com/user-attachments/assets/1280c34f-177e-4cb0-a0ad-cb0737c62ae5)
 
