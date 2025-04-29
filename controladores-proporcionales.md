@@ -1,119 +1,153 @@
-# Análisis de la función de transferencia con controlador proporcional $$K_p$$
+# 📘 Análisis de la Función de Transferencia
 
-- Función de transferencia
+## 1. Función de Transferencia Dada:
 
-$$G(s) = \frac{K_p}{s^3 + 6s^2 + 11s + 6}$$
+$$
+G(s) = \frac{25}{s^2 + 6s + 25}
+$$
 
-- Entrada: escalón unitario
+## 2. Comparación con la Forma Estándar de Segundo Orden:
 
-$$U(s) = \frac{1}{s}$$
+La forma general es:
 
-- La salida en Laplace:
+$$
+G(s) = \frac{k \omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}
+$$
 
-$$Y(s) = G(s)U(s) = \frac{K_p}{s(s^3 + 6s^2 + 11s + 6)}$$
+Igualamos coeficientes:
 
-## 1. Teorema del Valor Final
+- $ a_1 = 6 = 2\zeta\omega_n $
+- $ a_0 = 25 = \omega_n^2 $
 
-- Aplicamos:
+## 3. Cálculo de los Parámetros:
 
-$$\lim_{t \to \infty} y(t) = \lim_{s \to 0} sY(s)$$
+De $ \omega_n^2 = 25 $, obtenemos:
 
-- Calculamos:
+$$
+\omega_n = \sqrt{25} = 5
+$$
 
-$$\lim_{s \to 0} s \times \frac{K_p}{s(s^3 + 6s^2 + 11s + 6)} = \lim_{s \to 0} \frac{K_p}{s^3 + 6s^2 + 11s + 6}$$
+De $ 2\zeta\omega_n = 6 $, sustituimos $ \omega_n = 5 $:
 
-- Sustituyendo s = 0 
+$$
+2\zeta(5) = 6 \quad \Rightarrow \quad \zeta = \frac{6}{10} = 0.6
+$$
 
-$$\frac{K_p}{6}$$
+Verificación del valor de $ k $:
 
-*Conclusión:*  
-El valor final de la salida es:
+$$
+b_0 = k\omega_n^2 = 25 \quad \Rightarrow \quad k(5)^2 = 25 \quad \Rightarrow \quad k = 1
+$$
 
-$$ \lim_{t \to \infty} y(t) = \frac{K_p}{6}$$
+## 4. Función Reescrita:
 
-## 2. Ubicación de Polos sin $$K_p$$
+Sustituyendo los valores en la forma estándar:
 
-- El polinomio característico es:
+$$
+G(s) = \frac{(1)(5)^2}{s^2 + 2(0.6)(5)s + (5)^2} = \frac{25}{s^2 + 6s + 25}
+$$
 
-$$s^3 + 6s^2 + 11s + 6 = 0$$
+✅ *Coincide con la función original.*
 
-- Buscamos raíces: Probamos s = -1 :
+---
 
-$$(-1)^3 + 6(-1)^2 + 11(-1) + 6 = -1 + 6 - 11 + 6 = 0$$
+## 5. Agregando un Cero en $ s = -2 $
 
-- Entonces:
+Nueva función de transferencia:
 
-$$(s + 1) \text{ es un factor}$$
+$$
+G(s) = \frac{25(s + 2)}{s^2 + 6s + 25}
+$$
 
-- Dividimos:
+Para encontrar la respuesta al escalón, dividimos entre $ s $:
 
-$$s^3 + 6s^2 + 11s + 6 = (s+1)(s^2 + 5s + 6)$$
+$$
+Y(s) = \frac{25(s + 2)}{s(s^2 + 6s + 25)}
+$$
 
-- Factorizando el cuadrático:
+### Descomposición en Fracciones Parciales:
 
-$$s^2 + 5s + 6 = (s+2)(s+3)$$
+Proponemos:
 
-*Polos:* 
+$$
+\frac{25(s + 2)}{s(s^2 + 6s + 25)} = \frac{A}{s} + \frac{Bs + C}{s^2 + 6s + 25}
+$$
 
-$$s = -1, \quad s = -2, \quad s = -3$$
+Multiplicamos por el denominador común:
 
-- Todos los polos están en el semiplano izquierdo sistema estable $$K_p$$
+$$
+25(s + 2) = A(s^2 + 6s + 25) + (Bs + C)s
+$$
 
+Desarrollamos:
 
-## 3. Aplicación del criterio de Routh-Hurwitz $$k_p$$
+$$
+25s + 50 = A s^2 + 6A s + 25A + B s^2 + C s
+= (A + B)s^2 + (6A + C)s + 25A
+$$
 
-- Nuevo polinomio con controlador:
+### Sistema de Ecuaciones:
 
-$$s^3 + 6s^2 + 11s + (6 + K_p) = 0$$
+$$
+\begin{cases}
+A + B = 0 \\
+6A + C = 25 \\
+25A = 50
+\end{cases}
+\quad \Rightarrow \quad
+A = 2,\; B = -2,\; C = 13
+$$
 
-Coeficientes:
+Entonces:
 
-- $$a_0 = 1$$
-- $$a_1 = 6$$
-- $$a_2 = 11$$
-- $$a_3 = 6 + K_p$$
+$$
+Y(s) = \frac{2}{s} + \frac{-2s + 13}{s^2 + 6s + 25}
+$$
 
-### Tabla de Routh-Hurwitz:
+---
 
-| Fila  | Elementos |
-|:-----:|:---------:|
-| $$s^3$$ | 1 |
-| $$s^2$$ | 6 |
-| $$s^1$$ | $$b_1$$ |
-| $$s^0$$ | $$6 + K_p$$ |
+## 6. Completando Cuadrados en el Denominador:
 
-Cálculo de $$b_1$$:
+$$
+s^2 + 6s + 25 = (s + 3)^2 + 16
+$$
 
-$$b_1 = \frac{6(11) - 1(6+K_p)}{6}$$
-$$b_1 = \frac{66 - (6+K_p)}{6}$$
-$$b_1 = \frac{60 - K_p}{6}$$
+Reescribimos el numerador:
 
-## 4. Condiciones de Estabilidad
+$$
+-2s + 13 = -2(s + 3) + 19
+$$
 
-- Para estabilidad, todos los elementos de la primera columna deben ser positivos:
+Así:
 
-- $$1 > 0$$ → ✅
-- $$6 > 0$$ → ✅
-- $$b_1 > 0$$
-- $$6 + K_p > 0$$
+$$
+\frac{-2s + 13}{(s + 3)^2 + 16} = \frac{-2(s + 3)}{(s + 3)^2 + 4^2} + \frac{19}{(s + 3)^2 + 4^2}
+$$
 
-- Análisis de $$b_1 > 0$$:
+---
 
-$$\frac{60 - K_p}{6} > 0$$
+## 7. Transformadas Inversas de Laplace:
 
-Multiplicamos ambos lados por 6:
+Usamos las siguientes transformadas:
 
-$$60 - K_p > 0$$
-$$K_p < 60$$
+- $$\mathcal{L}^{-1}{\frac{1}{s}} = 1$$
+- $$\mathcal{L}^{-1}\frac{s + 3}{(s + 3)^2 + 4^2} = e^{-3t} \cos(4t)$$
+- $$\mathcal{L}^{-1}{\frac{4}{(s + 3)^2 + 4^2}} = e^{-3t} \sin(4t)$$
 
-### Análisis de $$6 + K_p > 0$$:
+Por lo tanto:
 
-$$K_p > -6$$
+$$
+y(t) = 2 - 2e^{-3t} \cos(4t) + \frac{19}{4} e^{-3t} \sin(4t)
+$$
 
-Pero usualmente trabajamos con $$K_p > 0$$ en control proporcional.
+---
 
-## 5. Conclusión Final
+## ✅ Respuesta Temporal Final:
 
-Para estabilidad:
+$$
+\boxed{
+y(t) = 2 - 2e^{-3t} \cos(4t) + \frac{19}{4} e^{-3t} \sin(4t)
+}
+$$
 
-$$0 < K_p < 60$$
+Esta expresión describe la *respuesta al escalón unitario* del sistema con un cero adicional en $ s = -2 $.
