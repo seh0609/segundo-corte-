@@ -91,9 +91,9 @@ $$\frac{-2s + 13}{(s + 3)^2 + 16} = \frac{-2(s + 3)}{(s + 3)^2 + 4^2} + \frac{19
 
 Usamos las siguientes transformadas:
 
-- $$\mathcal{L}^{-1}\left\{\frac{1}{s}\right\} = 1$$
-- $$\mathcal{L}^{-1}\left\{\frac{s + 3}{(s + 3)^2 + 4^2}\right\} = e^{-3t} \cos(4t)$$
-- $$\mathcal{L}^{-1}\left\{\frac{4}{(s + 3)^2 + 4^2}\right\} = e^{-3t} \sin(4t)$$
+- $$\mathcal{L}^{-1}{\frac{1}{s}} = 1$$
+- $$\mathcal{L}^{-1}{\frac{s + 3}{(s + 3)^2 + 4^2}} = e^{-3t} \cos(4t)$$
+- $$\mathcal{L}^{-1}{\frac{4}{(s + 3)^2 + 4^2}\} = e^{-3t} \sin(4t)$$
 
 Por lo tanto:
 
