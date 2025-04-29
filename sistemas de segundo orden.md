@@ -81,10 +81,10 @@ Figura 5. Ubicacion de polos par un sistema criticamente amortiguado://https://c
 
 Figura 6. Ubicacion de polos par un sistema sobre amortiguado://https://controlautomaticoeducacion.com/control-realimentado/sistemas-de-segundo-orden/
 
-
+### 1.3. 
 
 ## 10. Conclusion
-los sistemas de primer orden nos sirven en la práctica para modelar y predecir el comportamiento dinámico de diversos procesos, permitiendo un mejor control y optimización en aplicaciones industriales. Su respuesta exponencial está determinada por parámetros temporales que definen su evolución en el tiempo, diferenciando dos estados clave: el transitorio y el estacionario. Mientras que la respuesta a un escalón está acotada por un valor constante, la respuesta a una rampa presenta un crecimiento con pendiente constante. Estos conceptos son fundamentales en el análisis y diseño de sistemas de control, garantizando estabilidad y eficiencia en su funcionamiento.
+Los sistemas de segundo orden son fundamentales en la práctica para modelar y predecir el comportamiento dinámico de procesos más complejos, posibilitando un control y optimización avanzados en aplicaciones industriales. Su respuesta, caracterizada por posibles oscilaciones y sobreimpulsos, está determinada por parámetros como la frecuencia natural no amortiguada y el factor de amortiguamiento, que definen su evolución temporal y la transición entre los estados transitorio y estacionario. A diferencia de los sistemas de primer orden, su respuesta a un escalón puede ser sobreamortiguada, críticamente amortiguada o subamortiguada, alcanzando un valor constante. La respuesta a una rampa, en cambio, exhibe un error de estado estacionario constante. Comprender estos conceptos es crucial en el análisis y diseño de sistemas de control que requieren una respuesta dinámica específica y un comportamiento estable y eficiente.
 
 ## 11. Referencias
 
