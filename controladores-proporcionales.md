@@ -1,4 +1,4 @@
-# 📘 Diseño de controladores proporcionales 
+# Diseño de controladores proporcionales 
 El control proporcional es una estrategia de control que ajusta la salida del controlador de forma lineal con respecto al error de control. Este error se define como la diferencia entre la variable controlada y su valor de referencia. El controlador calcula una señal de control que es directamente proporcional a este error: cuanto mayor es la desviación, más fuerte es la acción correctiva aplicada al sistema. El objetivo principal es minimizar el error y llevar la variable controlada lo más cerca posible del punto de ajuste deseado.
 
 ## 1. Que compone un sistema de control 
