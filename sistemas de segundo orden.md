@@ -97,11 +97,12 @@ $$
 $$
 \gamma_1 = 0.5(1 - e^{-8t}) \quad\quad \gamma_2 = 0.5 + 0.5e^{-8t}
 $$
-<div align="center">
-  <img src="![Captura de pantalla 2025-04-29 105000](https://github.com/user-attachments/assets/3bbdf571-3a59-4393-9310-0ab302ef2e91)
+
+![Captura de pantalla 2025-04-29 105000](https://github.com/user-attachments/assets/046f72ad-6250-4c13-8250-6f43169e494a)
+
+Figura 7: Grafica de el comportamiento de los zeros
 
 
-Figura 7: Graica de el comportamiento de los zeros
 
 ## 10. Conclusion
 Los sistemas de segundo orden son fundamentales en la práctica para modelar y predecir el comportamiento dinámico de procesos más complejos, posibilitando un control y optimización avanzados en aplicaciones industriales. Su respuesta, caracterizada por posibles oscilaciones y sobreimpulsos, está determinada por parámetros como la frecuencia natural no amortiguada y el factor de amortiguamiento, que definen su evolución temporal y la transición entre los estados transitorio y estacionario. A diferencia de los sistemas de primer orden, su respuesta a un escalón puede ser sobreamortiguada, críticamente amortiguada o subamortiguada, alcanzando un valor constante. La respuesta a una rampa, en cambio, exhibe un error de estado estacionario constante. Comprender estos conceptos es crucial en el análisis y diseño de sistemas de control que requieren una respuesta dinámica específica y un comportamiento estable y eficiente.
