@@ -113,6 +113,7 @@ s^0     & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\
 \end{array}
 $$
 
+Tabla 1. Criterios de Routh Hurwitz
 - Despues de realizar el arreglo calculamos los coeficientes con las siguientes formulas:
 
 $$
@@ -143,6 +144,8 @@ s^1 & b_1 & 0 \\
 s^0 & c_1 & \\
 \end{array}
 $$
+
+Tabla 2. Tabla de Routh-Hurwitz
 
 - Cálculos:
   
@@ -238,7 +241,7 @@ $$s^2 + 4s + 5$$
 | $$s^1$$ |< 4        |
 | $$s^0$$ | 5         |
 
-Tabla 1. Tabla Ejercicio 1
+Tabla 3. Tabla Ejercicio 1
 
 Todos los coeficientes son positivos → *No hay cambios de signo* → *Sistema estable*.
 
@@ -280,7 +283,7 @@ $$s^2 + 4s + (5 + 5K_p) = 0$$
 | $$s^1$$ | 4 |
 | $$s^0$$ | $$5 + 5K_p$$ |
 
-Tabla 2. Tabla Ejercicio 1
+Tabla 4. Tabla Ejercicio 1
 - Condiciones de estabilidad:
 
 Para estabilidad, todos los coeficientes deben ser positivos:
@@ -386,7 +389,7 @@ Coeficientes:
 | $$s^1$$ | $$b_1$$ |
 | $$s^0$$ | $$6 + K_p$$ |
 
-Tabla 3. Tabla Ejercicio 2
+Tabla 5. Tabla Ejercicio 2
 
 Cálculo de $$b_1$$:
 
