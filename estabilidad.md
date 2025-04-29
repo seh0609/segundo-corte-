@@ -426,6 +426,8 @@ $$0 < K_p < 60$$
 
 ## 4. Concluciones
 
+En conjunto, estos métodos ofrecen herramientas complementarias para el análisis de la estabilidad. El Teorema del Valor Final proporciona una visión del comportamiento final de la salida, la ubicación de polos ofrece una caracterización fundamental de la estabilidad basada en las raíces del sistema, y el Criterio de Routh-Hurwitz proporciona un método práctico para evaluar la estabilidad directamente a partir de los coeficientes del polinomio característico, especialmente útil cuando encontrar las raíces analíticamente es complejo. Los ejemplos presentados ilustran cómo estos criterios se aplican para determinar la estabilidad de diferentes funciones de transferencia y cómo la introducción de un controlador (como un control proporcional (K_p)) puede afectar la estabilidad del sistema en lazo cerrado.
+
 ## 5. Referencias
 
 - https://dademuchconnection.wordpress.com/2018/03/15/estabilidad-de-un-sistema-de-control/
