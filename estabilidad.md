@@ -99,9 +99,73 @@ $$\lim_{t \to \infty} y(t) = 5A$$
   
 $$a_0 s^n + a_1 s^{n-1} + \cdots + a_{n-1} s + a_n = 0$$
 - Para que un polinomio sea de Hurwitz, todos sus coeficientes deben ser estrictamente positivos. La presencia de al menos un coeficiente negativo o nulo descarta inmediatamente que el polinomio sea de Hurwitz. Si todos los coeficientes son positivos, el polinomio se considera un posible candidato a ser de Hurwitz, requiriendo un análisis adicional para confirmar la ubicación de sus raíces.
+- Después realizamos el arreglo de Hurwitz:
+  
+$$
+\begin{array}{c|cccccc}
+s^n     & a_0 & a_2 & a_4 & a_6 & a_8 & \cdots \\
+s^{n-1} & a_1 & a_3 & a_5 & a_7 & a_9 & \cdots \\
+s^{n-2} & b_1 & b_2 & b_3 & b_4 & b_5 & \cdots \\
+s^{n-3} & c_1 & c_2 & c_3 & c_4 & c_5 & \cdots \\
+\vdots  & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
+s^1     & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\
+s^0     & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\
+\end{array}
+$$
+
+- Despues de realizar el arreglo calculamos los coeficientes con las siguientes formulas:
+
+$$
+b_1 = \frac{a_1 a_2 - a_0 a_3}{a_1}
+\quad\quad
+b_2 = \frac{a_1 a_4 - a_0 a_5}{a_1}
+$$
+
+$$
+c_1 = \frac{b_1 a_3 - a_1 b_2}{b_1}
+\quad\quad
+c_2 = \frac{b_1 a_5 - a_1 b_3}{b_1}
+$$
+
+💡**Ejemplo 3:**
+
+- Polinomio:
+
+$$s^3 + 7s^2 + 10s + 8 = 0$$
+
+- Tabla de Routh-Hurwitz:
+
+$$
+\begin{array}{c|cc}
+s^3 & 1 & 10 \\
+s^2 & 7 & 8 \\
+s^1 & b_1 & 0 \\
+s^0 & c_1 & \\
+\end{array}
+$$
+
+- Cálculos:
+  
+$$
+\begin{aligned}
+b_1 &= \frac{7 \cdot 10 - 1 \cdot 8}{7} = \frac{70 - 8}{7} = \frac{62}{7} \\
+\\
+c_1 &= \frac{\frac{62}{7} \cdot 8 - 7 \cdot 0}{\frac{62}{7}} = \frac{496}{62/7} = 8
+\end{aligned}
+$$
+
+- Resultado
+
+$$
+\begin{array}{c|cc}
+s^3 & 1 & 10 \\
+s^2 & 7 & 8 \\
+s^1 & \frac{62}{7} & 0 \\
+s^0 & 8 & \\
+\end{array}
+$$
 
 ## 3. Ejercicios
-
 📚 **Ejercicio de Estabilidad 1:**
 - Análisis de la función de transferencia
 - Función de transferencia
