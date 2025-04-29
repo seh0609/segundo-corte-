@@ -1,153 +1,42 @@
-# 📘 Análisis de la Función de Transferencia
+# 📘 Diseño de controladores proporcionales 
+El control proporcional es una estrategia de control que ajusta la salida del controlador de forma lineal con respecto al error de control. Este error se define como la diferencia entre la variable controlada y su valor de referencia. El controlador calcula una señal de control que es directamente proporcional a este error: cuanto mayor es la desviación, más fuerte es la acción correctiva aplicada al sistema. El objetivo principal es minimizar el error y llevar la variable controlada lo más cerca posible del punto de ajuste deseado.
 
-## 1. Función de Transferencia Dada:
+## 1. Que compone un sistema de control 
 
-$$
-G(s) = \frac{25}{s^2 + 6s + 25}
-$$
+- **Señal (v o i) de Entrada (Referencia):** Es la señal que representa el valor deseado o setpoint de la variable que queremos controlar. En el diagrama, entra al Comparador.
+- **Comparador:** Este bloque resta la Señal (v o i) del Sensor (que representa la salida real del sistema) de la Señal (v o i) de Entrada (Referencia). La salida del comparador es la señal de Error.
+- **Error:** Es la diferencia entre el valor deseado y el valor real de la variable controlada. Esta señal indica cuánto se desvía el sistema de su objetivo. El Error es la entrada al Controlador.
+- **Controlador:** Este bloque procesa la señal de Error de acuerdo con una ley de control (por ejemplo, proporcional, integral, derivativa). Su objetivo es generar una Acción de Control que corrija el error y lleve la salida del sistema al valor deseado.
+- **Acción de Control:** Es la señal generada por el Controlador que se aplica al Actuador. Esta señal manipula la entrada a la Planta para influir en su comportamiento.
+- **Actuador:** Este componente recibe la Acción de Control y la convierte en una Entrada física a la Planta. Por ejemplo, podría ser la posición de una válvula, el voltaje aplicado a un motor, o la potencia suministrada a un calentador.
+- **Planta (Sistema/Proceso):** Es el sistema que queremos controlar. Recibe la Entrada del Actuador y produce una Salida, que es la variable que nos interesa regular.
+- **Salida:** Es la variable real que está produciendo la Planta. Esta es la variable que el Sensor mide.
+- **Sensor:** Este dispositivo mide la Salida de la Planta y la convierte en una Señal (v o i) del Sensor que puede ser comparada con la Señal (v o i) de Entrada (Referencia), cerrando así el lazo de control (retroalimentación).
 
-## 2. Comparación con la Forma Estándar de Segundo Orden:
+![image](https://github.com/user-attachments/assets/b71c550d-450c-4dff-895c-ef653e9c22f5)\
+Figura 1. Imagen de un lazo cerrado
 
-La forma general es:
+### 1.1. Efectos la tener un lazo cerrado 
 
-$$
-G(s) = \frac{k \omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}
-$$
+- La configuración en lazo cerrado, a diferencia del lazo abierto, ofrece la capacidad de manipular dinámicas de respuesta mediante el diseño de controladores, además de permitir el ajuste del estado estable a través de la referencia y la mejora general del desempeño, aunque la inclusión de sensores para la retroalimentación introduce complejidad adicional en el sistema.
 
-Igualamos coeficientes:
+#### 1.1.1. Funcion de Trasferencia de un lazo cerrado
 
-- $ a_1 = 6 = 2\zeta\omega_n $
-- $ a_0 = 25 = \omega_n^2 $
+Dado:
+- \( G = 2 \)
+- \( C = 5 \)
 
-## 3. Cálculo de los Parámetros:
+La función de transferencia es:
 
-De $ \omega_n^2 = 25 $, obtenemos:
+$$\text{FT}(s) = \frac{GC}{1 + GC}$$
 
-$$
-\omega_n = \sqrt{25} = 5
-$$
+Sustituyendo:
 
-De $ 2\zeta\omega_n = 6 $, sustituimos $ \omega_n = 5 $:
+$$\text{FT}(s) = \frac{2 \cdot 5}{1 + 2 \cdot 5} = \frac{10}{11}$$
 
-$$
-2\zeta(5) = 6 \quad \Rightarrow \quad \zeta = \frac{6}{10} = 0.6
-$$
+### 1.2. Controlador de accion proporional
 
-Verificación del valor de $ k $:
+- El control proporcional ajusta la acción de control multiplicando el error por una ganancia constante, cuyo valor se determina mediante diseño para alcanzar el comportamiento deseado del sistema.
 
-$$
-b_0 = k\omega_n^2 = 25 \quad \Rightarrow \quad k(5)^2 = 25 \quad \Rightarrow \quad k = 1
-$$
-
-## 4. Función Reescrita:
-
-Sustituyendo los valores en la forma estándar:
-
-$$
-G(s) = \frac{(1)(5)^2}{s^2 + 2(0.6)(5)s + (5)^2} = \frac{25}{s^2 + 6s + 25}
-$$
-
-✅ *Coincide con la función original.*
-
----
-
-## 5. Agregando un Cero en $ s = -2 $
-
-Nueva función de transferencia:
-
-$$
-G(s) = \frac{25(s + 2)}{s^2 + 6s + 25}
-$$
-
-Para encontrar la respuesta al escalón, dividimos entre $ s $:
-
-$$
-Y(s) = \frac{25(s + 2)}{s(s^2 + 6s + 25)}
-$$
-
-### Descomposición en Fracciones Parciales:
-
-Proponemos:
-
-$$
-\frac{25(s + 2)}{s(s^2 + 6s + 25)} = \frac{A}{s} + \frac{Bs + C}{s^2 + 6s + 25}
-$$
-
-Multiplicamos por el denominador común:
-
-$$
-25(s + 2) = A(s^2 + 6s + 25) + (Bs + C)s
-$$
-
-Desarrollamos:
-
-$$
-25s + 50 = A s^2 + 6A s + 25A + B s^2 + C s
-= (A + B)s^2 + (6A + C)s + 25A
-$$
-
-### Sistema de Ecuaciones:
-
-$$
-\begin{cases}
-A + B = 0 \\
-6A + C = 25 \\
-25A = 50
-\end{cases}
-\quad \Rightarrow \quad
-A = 2,\; B = -2,\; C = 13
-$$
-
-Entonces:
-
-$$
-Y(s) = \frac{2}{s} + \frac{-2s + 13}{s^2 + 6s + 25}
-$$
-
----
-
-## 6. Completando Cuadrados en el Denominador:
-
-$$
-s^2 + 6s + 25 = (s + 3)^2 + 16
-$$
-
-Reescribimos el numerador:
-
-$$
--2s + 13 = -2(s + 3) + 19
-$$
-
-Así:
-
-$$
-\frac{-2s + 13}{(s + 3)^2 + 16} = \frac{-2(s + 3)}{(s + 3)^2 + 4^2} + \frac{19}{(s + 3)^2 + 4^2}
-$$
-
----
-
-## 7. Transformadas Inversas de Laplace:
-
-Usamos las siguientes transformadas:
-
-- $$\mathcal{L}^{-1}{\frac{1}{s}} = 1$$
-- $$\mathcal{L}^{-1}\frac{s + 3}{(s + 3)^2 + 4^2} = e^{-3t} \cos(4t)$$
-- $$\mathcal{L}^{-1}{\frac{4}{(s + 3)^2 + 4^2}} = e^{-3t} \sin(4t)$$
-
-Por lo tanto:
-
-$$
-y(t) = 2 - 2e^{-3t} \cos(4t) + \frac{19}{4} e^{-3t} \sin(4t)
-$$
-
----
-
-## ✅ Respuesta Temporal Final:
-
-$$
-\boxed{
-y(t) = 2 - 2e^{-3t} \cos(4t) + \frac{19}{4} e^{-3t} \sin(4t)
-}
-$$
-
-Esta expresión describe la *respuesta al escalón unitario* del sistema con un cero adicional en $ s = -2 $.
+![image](https://github.com/user-attachments/assets/20eef776-18a1-4b6a-a039-60821a7ed592)\
+Figura 2. Controlador proporcional
