@@ -1,8 +1,13 @@
 # Estabilidad 
 Es la capacidad de un sistema para mantener su comportamiento deseado ante perturbaciones o cambios de entrada. Es decir, que su salida no es ±∞ sino un valor concreto. También podríamos definir a un sistema estable que evoluciona de un modo similar a la variable de entrada.
 
-![image](https://github.com/user-attachments/assets/937ea8bc-eda9-4848-867e-c694bbac95e1)
+
+![image](https://github.com/user-attachments/assets/937ea8bc-eda9-4848-867e-c694bbac95e1)\
 Figura 1. Como se ve un sistema estable: https://dademuchconnection.wordpress.com/2018/03/15/estabilidad-de-un-sistema-de-control/
+
+![image](https://github.com/user-attachments/assets/227176bd-8b48-4cdb-a208-af1a332fc0ef)\
+Figura 2. Como se ve un sistema inestable: https://dademuchconnection.wordpress.com/2018/03/15/estabilidad-de-un-sistema-de-control/
+
 
 La estructura de un sistema de segundo orden se ve asi:
 
