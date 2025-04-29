@@ -81,7 +81,27 @@ Figura 5. Ubicacion de polos par un sistema criticamente amortiguado://https://c
 
 Figura 6. Ubicacion de polos par un sistema sobre amortiguado://https://controlautomaticoeducacion.com/control-realimentado/sistemas-de-segundo-orden/
 
-### 1.3. 
+### 1.3. Efectos De Los Zeros
+
+- Este efecto de presenta directamente en los estados transitorios de un sistema
+- El estado estacionario no tiene afectacion por esto
+
+💡**Ejemplo 1:**
+
+$$
+Y_1(s) = \frac{4}{s(s + 8)} \quad \text{y} \quad Y_2(s) = \frac{s + 4}{s(s + 8)}
+$$
+
+- Aplicando fracciones parciales:
+
+$$
+\gamma_1 = 0.5(1 - e^{-8t}) \quad\quad \gamma_2 = 0.5 + 0.5e^{-8t}
+$$
+<div align="center">
+  <img src="![Captura de pantalla 2025-04-29 105000](https://github.com/user-attachments/assets/3bbdf571-3a59-4393-9310-0ab302ef2e91)
+
+
+Figura 7: Graica de el comportamiento de los zeros
 
 ## 10. Conclusion
 Los sistemas de segundo orden son fundamentales en la práctica para modelar y predecir el comportamiento dinámico de procesos más complejos, posibilitando un control y optimización avanzados en aplicaciones industriales. Su respuesta, caracterizada por posibles oscilaciones y sobreimpulsos, está determinada por parámetros como la frecuencia natural no amortiguada y el factor de amortiguamiento, que definen su evolución temporal y la transición entre los estados transitorio y estacionario. A diferencia de los sistemas de primer orden, su respuesta a un escalón puede ser sobreamortiguada, críticamente amortiguada o subamortiguada, alcanzando un valor constante. La respuesta a una rampa, en cambio, exhibe un error de estado estacionario constante. Comprender estos conceptos es crucial en el análisis y diseño de sistemas de control que requieren una respuesta dinámica específica y un comportamiento estable y eficiente.
