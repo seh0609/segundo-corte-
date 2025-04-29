@@ -91,3 +91,8 @@ $$s = -\frac{2}{5}$$
 
 $$\lim_{t \to \infty} y(t) = 5A$$
 - Y por tanto se encuentra en el semiplano izquierdo del plano \( s \). La salida no crece indefinidamente y tiende a un valor finito.
+
+
+
+
+📚 **Ejercicio de Estabilidad**
