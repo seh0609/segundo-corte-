@@ -95,9 +95,9 @@ Donde $$\omega = \sqrt{32} \approx 5.657$$
 
 Usamos las siguientes transformadas:
 
-- $$\mathcal{L}^{-1}\left\{\frac{1}{s}\right\} = 1$$
+- $$\mathcal{L}^{-1}\{\frac{1}{s}\} = 1$$
   
-- $$\mathcal{L}^{-1}\left\{\frac{s + a}{(s + a)^2 + \omega^2}\right\} = e^{-at} \cos(\omega t)$$
+- $$\mathcal{L}^{-1}{\frac{s + a}{(s + a)^2 + \omega^2}} = e^{-at} \cos(\omega t)$$
 
 Aplicamos:
 
