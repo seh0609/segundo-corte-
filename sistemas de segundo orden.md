@@ -335,7 +335,9 @@ Esta expresión describe la *respuesta al escalón unitario* del sistema con un 
 
 
 ## 10. Conclusion
-Los sistemas de segundo orden son fundamentales en la práctica para modelar y predecir el comportamiento dinámico de procesos más complejos, posibilitando un control y optimización avanzados en aplicaciones industriales. Su respuesta, caracterizada por posibles oscilaciones y sobreimpulsos, está determinada por parámetros como la frecuencia natural no amortiguada y el factor de amortiguamiento, que definen su evolución temporal y la transición entre los estados transitorio y estacionario. A diferencia de los sistemas de primer orden, su respuesta a un escalón puede ser sobreamortiguada, críticamente amortiguada o subamortiguada, alcanzando un valor constante. La respuesta a una rampa, en cambio, exhibe un error de estado estacionario constante. Comprender estos conceptos es crucial en el análisis y diseño de sistemas de control que requieren una respuesta dinámica específica y un comportamiento estable y eficiente.
+Los sistemas de segundo orden son esenciales para representar dinámicas complejas en procesos industriales, ya que permiten predecir y controlar su comportamiento con mayor precisión. Su respuesta está influenciada por parámetros como la frecuencia natural y el factor de amortiguamiento, que determinan si el sistema oscila, se estabiliza rápidamente o responde de forma lenta. A diferencia de los sistemas de primer orden, pueden presentar distintos tipos de amortiguamiento ante una entrada escalón y un error constante ante una entrada rampa. Dominar estos conceptos es fundamental para diseñar sistemas de control estables y eficientes.
+
+
 
 ## 11. Referencias
 
