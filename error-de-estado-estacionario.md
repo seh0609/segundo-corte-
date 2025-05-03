@@ -1,110 +1,114 @@
 
-- Función de Transferencia Dada:
+Dada la función de transferencia:
 
-$$G(s) = \frac{25}{s^2 + 6s + 25}$$
+$$G(s) = \frac{48}{s^2 + 8s + 48}$$
 
-- Comparación con la Forma Estándar de Segundo Orden:
+Queremos:
 
-La forma general es:
+- Llevarla a su forma canónica.
+- Agregar un cero en $ s = -4 $ y analizar cómo afecta la respuesta al escalón unitario.
 
-$$G(s) = \frac{k \omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}$$
+Forma Canónica del Sistema
+- Forma estándar de segundo orden:
 
-Igualamos coeficientes:
+$$G(s) = \frac{K \omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}$$
 
-- $$a_1 = 6 = 2\zeta\omega_n$$
-- $$a_0 = 25 = \omega_n^2$$
+- Identificar coeficientes
 
-- Cálculo de los Parámetros:
+De la función original:
 
-De $$\omega_n^2 = 25$$, obtenemos:
+- $$a_1 = 8$$
+- $$a_0 = 48$$
+- $$b_0 = 48$$
 
-$$\omega_n = \sqrt{25} = 5$$
+- Calcular $$\omega_n$$
 
-De $$2\zeta\omega_n = 6$$, sustituimos $$\omega_n = 5$$:
+$$\omega_n = \sqrt{a_0} = \sqrt{48} \approx 6.928$$
 
-$$2\zeta(5) = 6 \quad \Rightarrow \quad \zeta = \frac{6}{10} = 0.6$$
+- Calcular $$\zeta$$
 
-Verificación del valor de $$k$$:
+$$2\zeta\omega_n = a_1 = 8 \quad \Rightarrow \quad \zeta = \frac{8}{2 \cdot 6.928} = \frac{8}{13.856} \approx 0.577$$
 
-$$b_0 = k\omega_n^2 = 25 \quad \Rightarrow \quad k(5)^2 = 25 \quad \Rightarrow \quad k = 1$$
+Calcular $$K$$
 
-- Función Reescrita:
+$$K = \frac{b_0}{\omega_n^2} = \frac{48}{48} = 1$$
 
-Sustituyendo los valores en la forma estándar:
+Función en forma canónica:
 
-$$G(s) = \frac{(1)(5)^2}{s^2 + 2(0.6)(5)s + (5)^2} = \frac{25}{s^2 + 6s + 25}$$
+$$G(s) = \frac{1 \cdot 48}{s^2 + 2(0.577)(6.928)s + (6.928)^2} = \frac{48}{s^2 + 8s + 48}$$
 
-- Agregando un Cero en $$s = -2$$
+- Efecto de un Cero en $$s = -4$$
 
-Nueva función de transferencia:
+Agregamos el cero multiplicando por $$(s + 4)$$:
 
-$$G(s) = \frac{25(s + 2)}{s^2 + 6s + 25}$$
+$$G_z(s) = \frac{48(s + 4)}{s^2 + 8s + 48}$$
 
-Para encontrar la respuesta al escalón, dividimos entre $$s$$:
+Para encontrar la *respuesta al escalón unitario*, dividimos entre $$s$$:
 
-$$Y(s) = \frac{25(s + 2)}{s(s^2 + 6s + 25)}$$
+$$Y(s) = \frac{48(s + 4)}{s(s^2 + 8s + 48)}$$
 
-- Descomposición en Fracciones Parciales:
-
+- Descomposición en fracciones parciales
 Proponemos:
 
-$$\frac{25(s + 2)}{s(s^2 + 6s + 25)} = \frac{A}{s} + \frac{Bs + C}{s^2 + 6s + 25}$$
+$$\frac{48(s + 4)}{s(s^2 + 8s + 48)} = \frac{A}{s} + \frac{Bs + C}{s^2 + 8s + 48}$$
 
-Multiplicamos por el denominador común:
+Multiplicamos ambos lados por el denominador común:
 
-$$25(s + 2) = A(s^2 + 6s + 25) + (Bs + C)s$$
+$$48(s + 4) = A(s^2 + 8s + 48) + (Bs + C)s$$
 
 Desarrollamos:
 
-$$25s + 50 = A s^2 + 6A s + 25A + B s^2 + C s
-= (A + B)s^2 + (6A + C)s + 25A$$
+$$48s + 192 = A s^2 + 8A s + 48A + B s^2 + C s
+= (A + B)s^2 + (8A + C)s + 48A$$
 
-- Sistema de Ecuaciones:
+- Sistema de ecuaciones:
 
 $$
 \begin{cases}
 A + B = 0 \\
-6A + C = 25 \\
-25A = 50
+8A + C = 48 \\
+48A = 192
 \end{cases}
 \quad \Rightarrow \quad
-A = 2,\; B = -2,\; C = 13
+A = 4,\; B = -4,\; C = 16
 $$
 
 Entonces:
 
-$$Y(s) = \frac{2}{s} + \frac{-2s + 13}{s^2 + 6s + 25}$$
+$$Y(s) = \frac{4}{s} + \frac{-4s + 16}{s^2 + 8s + 48}$$
 
-- Completando Cuadrados en el Denominador:
+- Completar cuadrados en el denominador
 
-$$s^2 + 6s + 25 = (s + 3)^2 + 16$$
+$$s^2 + 8s + 48 = (s + 4)^2 + 32$$
 
 Reescribimos el numerador:
 
-$$-2s + 13 = -2(s + 3) + 19$$
-
-Así:
-
-$$\frac{-2s + 13}{(s + 3)^2 + 16} = \frac{-2(s + 3)}{(s + 3)^2 + 4^2} + \frac{19}{(s + 3)^2 + 4^2}$$
-
-- Transformadas Inversas de Laplace:
-
-Usamos las siguientes transformadas:
-
-- $$\mathcal{L}^{-1}{\frac{1}{s}} = 1$$
-- $$\mathcal{L}^{-1}{\frac{s + 3}{(s + 3)^2 + 4^2}} = e^{-3t} \cos(4t)$$
-- $$\mathcal{L}^{-1}{\frac{4}{(s + 3)^2 + 4^2}\} = e^{-3t} \sin(4t)$$
+$$-4s + 16 = -4(s + 4)$$
 
 Por lo tanto:
 
-$$y(t) = 2 - 2e^{-3t} \cos(4t) + \frac{19}{4} e^{-3t} \sin(4t)$$
+$$\frac{-4s + 16}{(s + 4)^2 + 32} = \frac{-4(s + 4)}{(s + 4)^2 + (\sqrt{32})^2}$$
 
-- Respuesta Temporal Final:
+Donde $$\omega = \sqrt{32} \approx 5.657$$
+
+- Transformada inversa de Laplace
+
+Usamos las siguientes transformadas:
+
+- $$\mathcal{L}^{-1}\left\{\frac{1}{s}\right\} = 1$$
+  
+- $$\mathcal{L}^{-1}\left\{\frac{s + a}{(s + a)^2 + \omega^2}\right\} = e^{-at} \cos(\omega t)$$
+
+Aplicamos:
+
+$$y(t) = 4 - 4e^{-4t} \cos(5.657t)$$
+
+- Respuesta Temporal Final con el Cero:
 
 $$
 \boxed{
-y(t) = 2 - 2e^{-3t} \cos(4t) + \frac{19}{4} e^{-3t} \sin(4t)
+y(t) = 4 - 4e^{-4t} \cos(5.657t)
 }
 $$
 
-Esta expresión describe la *respuesta al escalón unitario* del sistema con un cero adicional en $ s = -2 $.
+Esta expresión describe la *respuesta al escalón unitario* del sistema con un cero adicional en $$s = -4$$.
